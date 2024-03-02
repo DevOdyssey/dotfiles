@@ -3,16 +3,24 @@
 ## Powershell
 
 ### Requirements
-- [PowerToys](): CommandNotFound module
 ```terminal
 winget install --id Microsoft.PowerToys
-```
-
-- [Oh My Posh](https://ohmyposh.dev/)
-```terminal
 winget install --id JanDeDobbeleer.OhMyPosh
+
+Import-Module -Name posh-git
+Install-Module -Name Terminal-Icons
+Import-Module -Name PSFzf
+Install-Module -Name PSMenu
 ```
 
 ## Neovim
 
+### Requirements
+```terminal
+brew install ...
+
+```
 ## Tmux
+``` terminal
+...
+```

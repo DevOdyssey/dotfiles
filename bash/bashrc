@@ -1,0 +1,17 @@
+# cd alias
+alias cd.='cd . '
+alias cd..='cd .. '
+alias cd~='cd ~ '
+
+# vim alias
+alias vim='NVIM_APPNAME=nvim nvim'
+alias lvim='NVIM_APPNAME=nvim-lazy nvim'
+
+# brew
+eval "$(/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# oh-my-posh
+eval "$(oh-my-posh init --config $(brew --prefix oh-my-posh)/themes/wholespace.omp.json bash)"
+. "$HOME/.cargo/env"
