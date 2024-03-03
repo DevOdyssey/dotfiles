@@ -11,10 +11,11 @@ local function has_buildable()
   if etc.is_window() then
     return vim.fn.executable("cmake") == 1
   end
-  return vim.fm.executable("make") == 1
+  return vim.fn.executable("make") == 1
 end
 
 local tag = "🔭 "
+
 return {
 
   -- telescope.nvim
@@ -30,23 +31,13 @@ return {
     },
     keys = {
       {
-        ";r",
+        "<Space>fp",
         function()
           require("telescope.builtin").find_files({
             cwd = require("lazy.core.config").options.root,
           })
         end,
-        desc = tag .. "Fzf File-Name in Plugin Directory",
-      },
-      {
-        ";s",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.live_grep({
-            additional_args = { "--hidden" },
-          })
-        end,
-        desc = tag .. "Fzf String in Current Directory",
+        desc = tag .. "Plugin File",
       },
       {
         "\\\\",
@@ -54,42 +45,18 @@ return {
           local builtin = require("telescope.builtin")
           builtin.buffers()
         end,
-        desc = tag .. "Fzf Buffer",
+        desc = tag .. "Buffer",
       },
       {
-        ";h",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.help_tags()
-        end,
-        desc = tag .. "Fzf Help-Tag",
-      },
-      {
-        ";;",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.resume()
-        end,
-        desc = tag .. "Fzf Resume",
-      },
-      {
-        ";d",
-        function()
-          local builtin = require("telescope.builtin")
-          builtin.diagnostics()
-        end,
-        desc = tag .. "Fzf Diagnostics",
-      },
-      {
-        ";t",
+        "<Space>sf",
         function()
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
-        desc = tag .. "Fzf Treesitter",
+        desc = tag .. "Treesitter Symbol",
       },
       {
-        ";f",
+        "<Space>fs",
         function()
           local telescope = require("telescope")
 
@@ -108,7 +75,7 @@ return {
             layout_config = { height = 40 },
           })
         end,
-        desc = tag .. "Open File Browser in buffer Directory",
+        desc = tag .. "Buffer(Browser)",
       },
     },
 
