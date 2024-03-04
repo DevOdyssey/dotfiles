@@ -1,4 +1,5 @@
 return {
+  -- colorscheme
   {
     "folke/tokyonight.nvim",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -8,6 +9,8 @@ return {
       vim.cmd([[colorscheme tokyonight-moon]])
     end,
   },
+
+  -- neo-tree
   {
   "nvim-neo-tree/neo-tree.nvim",
   dependencies = {

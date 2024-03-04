@@ -36,7 +36,7 @@ return {
           formatters = {
             json = "jq",
             html = function(body)
-              -- npm install -g prettier
+              -- return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
               return vim.fn.system({ "prettier", "--parser", "html" }, body)
             end,
           },

@@ -1,6 +1,6 @@
 -- leader
 vim.g.mapleader = " "
-vim.g.localmapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- utf-8
 vim.scriptencoding = "utf-8"

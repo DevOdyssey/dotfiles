@@ -61,5 +61,11 @@ return {
     },
 
     -- setup
+    setup = {
+      -- example
+      -- tsserver = function(server, opts)
+      --   ...
+      -- end,
+    },
   },
 }

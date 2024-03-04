@@ -1,6 +1,6 @@
 -- leader
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 -- auto format
 vim.g.autoformat = true

@@ -23,7 +23,7 @@ vim.keymap.set("n", "s", "<nop>", { noremap = true, silent = true })
 
 -- leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 lazy.setup {
   spec = {
