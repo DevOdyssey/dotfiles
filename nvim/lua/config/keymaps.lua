@@ -77,7 +77,7 @@ local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
   return function()
-    go { severity = severity }
+    go({ severity = severity })
   end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
@@ -95,7 +95,7 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- TODO: toggle implements
-local toggle = require "help.toggle"
+local toggle = require("help.toggle")
 
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
   map("n", "<leader>uh", function()
@@ -109,13 +109,13 @@ map("n", "<leader>ud", function()
   toggle.diagnostics()
 end, { desc = "Toggle Diagnostics" })
 map("n", "<leader>us", function()
-  toggle "spell"
+  toggle("spell")
 end, { desc = "Toggle Spelling" })
 map("n", "<leader>uw", function()
-  toggle "wrap"
+  toggle("wrap")
 end, { desc = "Toggle Word Wrap" })
 map("n", "<leader>uL", function()
-  toggle "relativenumber"
+  toggle("relativenumber")
 end, { desc = "Toggle Relative Line Numbers" })
 
 map("n", "<leader>uT", function()
@@ -128,11 +128,15 @@ end, { desc = "Toggle Treesitter Highlight" })
 map("n", "<leader>ub", function()
   toggle("background", false, { "light", "dark" })
 end, { desc = "Toggle Background" })
-
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 map("n", "<leader>uc", function()
   toggle("conceallevel", false, { 0, conceallevel })
 end, { desc = "Toggle Conceal" })
+
+-- Refactoring
+vim.keymap.set("n", "<leader>rn", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, desc = "[R]e[n]ame" })
 
 --[[
 map("n", "<leader>uf", function() Util.format.toggle() end, { desc = "Toggle auto format (global)" })

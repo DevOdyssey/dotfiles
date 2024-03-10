@@ -6,14 +6,14 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight-moon]])
+      vim.cmd([[colorscheme tokyonight-storm]])
     end,
   },
 
   -- neo-tree
   {
-  "nvim-neo-tree/neo-tree.nvim",
-  dependencies = {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
