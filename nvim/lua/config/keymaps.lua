@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- lazy
-map("n", "<Space>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
