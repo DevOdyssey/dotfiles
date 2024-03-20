@@ -21,4 +21,11 @@ function M.is_window()
   return vim.loop.os_uname().sysname:find("Windows")
 end
 
+function M.zls_path()
+  if M.is_window() then
+    return "C:/tools/zig/zls.exe"
+  else
+    return "$HOME/.local/zig/zls"
+  end
+end
 return M

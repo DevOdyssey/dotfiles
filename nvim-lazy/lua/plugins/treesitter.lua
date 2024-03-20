@@ -21,6 +21,8 @@ return {
         "gosum",
         "tmux",
         "bash",
+        "c_sharp",
+        "zig",
       },
 
       incremental_selection = {
@@ -58,6 +60,7 @@ return {
         },
       },
     },
+
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
       vim.filetype.add({

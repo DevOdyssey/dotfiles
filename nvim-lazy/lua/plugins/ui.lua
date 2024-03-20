@@ -18,6 +18,7 @@ return {
 
   {
     "akinsho/toggleterm.nvim",
+    enabled = false,
     config = true,
     cmd = "ToggleTerm",
     build = ":ToggleTerm",
@@ -102,6 +103,7 @@ return {
   -- dashboard
   {
     "nvimdev/dashboard-nvim",
+    enabled = false,
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
