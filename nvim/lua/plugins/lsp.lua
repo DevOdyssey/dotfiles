@@ -53,7 +53,6 @@ return {
       },
       -- LSP Server Settings
       servers = {
-
         -- lua
         lua_ls = {
           -- cmd = {...},
@@ -81,8 +80,6 @@ return {
             },
           },
         },
-
-        -- go
       },
     },
 
@@ -125,8 +122,6 @@ return {
             })
           end, "[C]ode [A]ction (Source)")
 
-          -- See `:help CursorHold` for information about when this is executed
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

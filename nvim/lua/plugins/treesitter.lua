@@ -7,22 +7,22 @@ return {
     event = "VeryLazy",
     init = function(plugin)
       require("lazy.core.loader").add_to_rtp(plugin)
-      require "nvim-treesitter.query_predicates"
+      require("nvim-treesitter.query_predicates")
     end,
 
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
         config = function()
-          local move = require "nvim-treesitter.textobjects.move"
-          local configs = require "nvim-treesitter.configs"
+          local move = require("nvim-treesitter.textobjects.move")
+          local configs = require("nvim-treesitter.configs")
           for name, fn in pairs(move) do
-            if name:find "goto" == 1 then
+            if name:find("goto") == 1 then
               move[name] = function(q, ...)
                 if vim.wo.diff then
                   local config = configs.get_module("textobjects.move")[name]
                   for key, query in pairs(config or {}) do
-                    if q == query and key:find "[%]%[][cC]" then
+                    if q == query and key:find("[%]%[][cC]") then
                       vim.cmd("normal! " .. key)
                       return
                     end
@@ -53,6 +53,9 @@ return {
         "cpp",
         "diff",
         "go",
+        "gomod",
+        "gowork",
+        "gosum",
         "html",
         "javascript",
         "jsdoc",

@@ -2,6 +2,7 @@
 alias cd.='cd . '
 alias cd..='cd .. '
 alias cd~='cd ~ '
+alias cls='clear'
 
 # vim alias
 alias vim='NVIM_APPNAME=nvim nvim'
@@ -13,5 +14,25 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # oh-my-posh
-eval "$(oh-my-posh init --config $(brew --prefix oh-my-posh)/themes/wholespace.omp.json bash)"
+eval "$(oh-my-posh init --config $(brew --prefix oh-my-posh)/themes/amro.omp.json bash)"
 . "$HOME/.cargo/env"
+
+# tmux
+alias ltmux='TZ=Asia/Seoul tmux'
+
+#=============================#
+# Manual Install Applications #
+#=============================#
+
+# dotnet path
+export DOTNET_ROOT=$HOME/.local/dotnet
+PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH"
+
+# zig path
+PATH="$HOME/.local/zig:$PATH"
+
+# odin path
+export ODIN_ROOT=$HOME/.local/odin
+PATH="$HOME/.local/odin:$PATH"
+
+# end
