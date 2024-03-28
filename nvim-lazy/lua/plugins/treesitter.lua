@@ -23,6 +23,7 @@ return {
         "bash",
         "c_sharp",
         "zig",
+        "vimdoc",
       },
 
       incremental_selection = {

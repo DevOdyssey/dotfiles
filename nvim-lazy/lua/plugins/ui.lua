@@ -1,4 +1,23 @@
 return {
+  -- {
+  --   "carbon-steel/detour.nvim",
+  --   config = function()
+  --     vim.keymap.set("n", "<c-w><enter>", ":Detour<cr>")
+  --     vim.keymap.set("n", "<leader>t", function()
+  --       local ok = require("detour").Detour() -- Open a detour popup
+  --       if not ok then
+  --         return
+  --       end
+  --
+  --       vim.cmd.enew()
+  --       vim.bo.bufhidden = "delete"
+  --       require("telescope.builtin").buffers({})
+  --       vim.api.nvim_feedkeys("term://", "n", true)
+  --     end)
+  --   end,
+  -- },
+
+  -- vim-tmux-navigator
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
@@ -13,25 +32,6 @@ return {
       { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
       { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
       { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-    },
-  },
-
-  {
-    "akinsho/toggleterm.nvim",
-    enabled = false,
-    config = true,
-    cmd = "ToggleTerm",
-    build = ":ToggleTerm",
-    keys = { { "<C-t>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" } },
-    opts = {
-      open_mapping = [[<C-t>]],
-      direction = "horizontal",
-      shade_filetypes = {},
-      hide_numbers = true,
-      insert_mappings = true,
-      terminal_mappings = true,
-      start_in_insert = true,
-      close_on_exit = true,
     },
   },
 
