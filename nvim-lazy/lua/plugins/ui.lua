@@ -16,6 +16,13 @@ return {
   --     end)
   --   end,
   -- },
+  {
+    "tamton-aquib/keys.nvim",
+    cmd = "KeysToggle",
+    keys = {
+      { "<leader>uk", "<cmd>KeysToggle<cr>" },
+    },
+  },
 
   -- vim-tmux-navigator
   {

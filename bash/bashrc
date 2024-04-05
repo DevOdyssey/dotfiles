@@ -35,4 +35,6 @@ PATH="$HOME/.local/zig:$PATH"
 export ODIN_ROOT=$HOME/.local/odin
 PATH="$HOME/.local/odin:$PATH"
 
+# python virtual environment - activate
+source "$HOME/python/venv/3.11/bin/activate"
 # end

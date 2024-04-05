@@ -8,7 +8,7 @@ Import-Module "$env:USERPROFILE\AppData\Local\PowerToys\WinGetCommandNotFound.ps
 Import-Module posh-git
 
 # oh-my-posh
-$omp_config = "$env:POSH_THEMES_PATH\wholespace.omp.json"
+$omp_config = "$env:POSH_THEMES_PATH\amro.omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 
 # Terminal-Icons
@@ -21,8 +21,8 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 
 # Fzf
-Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
+# Import-Module PSFzf
+# Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # Env
 $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
@@ -43,4 +43,13 @@ function which ($command) {
 function run-nvim { $env:NVIM_APPNAME="nvim";nvim.exe $args }
 function run-nvim-lazy {$env:NVIM_APPNAME="nvim-lazy";nvim.exe $args }
 Set-Alias -Name vim -Value run-nvim
+Set-Alias -Name nvim -Value run-nvim
 Set-Alias -Name lvim -Value run-nvim-lazy
+Set-Alias -Name lnvim -Value run-nvim-lazy
+
+# vscode 
+Set-Alias -Name code -Value code-insiders
+
+# python venv (base)
+Import-Module "$env:USERPROFILE\python\venv\base\Scripts\Activate.ps1"
+

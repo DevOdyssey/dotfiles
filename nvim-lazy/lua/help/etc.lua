@@ -28,4 +28,19 @@ function M.zls_path()
     return "$HOME/.local/zig/zls"
   end
 end
+
+function M.has_buildable()
+  if M.is_window() then
+    return vim.fn.executable("cmake") == 1
+  end
+  return vim.fn.executable("make") == 1
+end
+
+function M.fzf_build_cmd()
+  if M.is_window() then
+    return "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+  end
+  return "make"
+end
+
 return M

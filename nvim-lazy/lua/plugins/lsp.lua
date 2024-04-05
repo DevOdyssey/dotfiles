@@ -60,6 +60,7 @@ return {
         zls = {
           cmd = { "zls" },
         },
+        -- ols
       },
     },
   },

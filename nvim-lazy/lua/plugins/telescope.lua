@@ -1,19 +1,3 @@
-local etc = require("help.etc")
-
-local function get_build()
-  if etc.is_window() then
-    return "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-  end
-  return "make"
-end
-
-local function has_buildable()
-  if etc.is_window() then
-    return vim.fn.executable("cmake") == 1
-  end
-  return vim.fn.executable("make") == 1
-end
-
 local tag = "🔭 "
 
 return {
@@ -22,11 +6,6 @@ return {
   {
     "telescope.nvim",
     dependencies = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = get_build(),
-        enabled = has_buildable(),
-      },
       "nvim-telescope/telescope-file-browser.nvim",
     },
     keys = {
@@ -135,7 +114,6 @@ return {
       }
 
       telescope.setup(opts)
-      require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
     end,
   },
