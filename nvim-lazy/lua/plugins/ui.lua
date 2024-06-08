@@ -1,21 +1,5 @@
 return {
-  -- {
-  --   "carbon-steel/detour.nvim",
-  --   config = function()
-  --     vim.keymap.set("n", "<c-w><enter>", ":Detour<cr>")
-  --     vim.keymap.set("n", "<leader>t", function()
-  --       local ok = require("detour").Detour() -- Open a detour popup
-  --       if not ok then
-  --         return
-  --       end
-  --
-  --       vim.cmd.enew()
-  --       vim.bo.bufhidden = "delete"
-  --       require("telescope.builtin").buffers({})
-  --       vim.api.nvim_feedkeys("term://", "n", true)
-  --     end)
-  --   end,
-  -- },
+  -- keys.nvim
   {
     "tamton-aquib/keys.nvim",
     cmd = "KeysToggle",
